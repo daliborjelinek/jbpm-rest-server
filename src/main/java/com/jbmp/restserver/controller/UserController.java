@@ -16,20 +16,20 @@ public class UserController {
     Logger logger = LoggerFactory.getLogger(getClass());
 
     @GetMapping("/{id}")
-    public User user(@PathVariable("id") Long id) {
-        return new User(1L, "Josef Novák", 28);
+    public User user(@PathVariable("id") int id) {
+        return new User(1, "bartutomas@gmail.com", "Tomas", "Bartu", "731 222");
     }
 
     @GetMapping
     public Users users() {
         List<User> users = Arrays.asList(
-                new User(1L, "Josef Novák", 28),
-                new User(2L, "Karel Hruška", 60)
+                new User(1, "tomas@gmail.com", "Tomas", "Bartu", "731 222"),
+                new User(2, "honzik@gmail.com", "Honzik", "Pavlu", "731 223")
         );
         return new Users(users);
     }
 
-    @PostMapping("/user")
+    @PostMapping("/save")
     public User user(@RequestBody User user) {
         logger.info("Saving " + user);
         return user;
