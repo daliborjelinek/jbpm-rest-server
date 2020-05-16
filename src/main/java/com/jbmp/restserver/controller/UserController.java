@@ -29,7 +29,7 @@ public class UserController {
         return new Users(users);
     }
 
-    @PostMapping("/save")
+    @PostMapping
     public User user(@RequestBody User user) {
         logger.info("Saving " + user);
         return user;
