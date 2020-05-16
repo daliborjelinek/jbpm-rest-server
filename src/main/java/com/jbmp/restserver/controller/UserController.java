@@ -15,16 +15,16 @@ public class UserController {
 
     Logger logger = LoggerFactory.getLogger(getClass());
 
-    @GetMapping("/{id}")
-    public User user(@PathVariable("id") int id) {
-        return new User(1, "bartutomas@gmail.com", "Tomas", "Bartu", "731 222");
+    @GetMapping("/oauth")
+    public User getOAuth() {
+        return new User("Brno", "bartutomas@gmail.com", "Tomas", "Bartu", "pw==", "+421731", "male", "Rybarska 32");
     }
 
     @GetMapping
     public Users users() {
         List<User> users = Arrays.asList(
-                new User(1, "tomas@gmail.com", "Tomas", "Bartu", "731 222"),
-                new User(2, "honzik@gmail.com", "Honzik", "Pavlu", "731 223")
+                new User("Brno", "alena@gmail.com", "Alena", "Nejaka", "pwx==", "+421731", "female", "Vlhka 32"),
+                new User("Brno", "bartutomas@gmail.com", "Tomas", "Bartu", "pw==", "+421731", "male", "Rybarska")
         );
         return new Users(users);
     }

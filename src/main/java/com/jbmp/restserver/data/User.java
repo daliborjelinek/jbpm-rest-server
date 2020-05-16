@@ -2,17 +2,24 @@ package com.jbmp.restserver.data;
 
 public class User {
 
-    private final int id;
+    private final String city;
+    private final String email;
+    private final String name;
+    private final String surname;
+    private final String password;
+    private final String phone;
+    private final String sex;
+    private final String street;
 
     @Override
     public String toString ()
     {
-        return "User{" + "id=" + id + ", email='" + email + '\'' + ", jmeno='" + jmeno + '\'' + ", prijmeni='" + prijmeni + '\'' + ", telefon='" + telefon + '\'' + '}';
+        return "User{" + "city='" + city + '\'' + ", email='" + email + '\'' + ", name='" + name + '\'' + ", surname='" + surname + '\'' + ", password='" + password + '\'' + ", phone='" + phone + '\'' + ", sex='" + sex + '\'' + ", street='" + street + '\'' + '}';
     }
 
-    public int getId ()
+    public String getCity ()
     {
-        return id;
+        return city;
     }
 
     public String getEmail ()
@@ -20,33 +27,45 @@ public class User {
         return email;
     }
 
-    public String getJmeno ()
+    public String getName ()
     {
-        return jmeno;
+        return name;
     }
 
-    public String getPrijmeni ()
+    public String getSurname ()
     {
-        return prijmeni;
+        return surname;
     }
 
-    public String getTelefon ()
+    public String getPassword ()
     {
-        return telefon;
+        return password;
     }
 
-    public User (int id, String email, String jmeno, String prijmeni, String telefon)
+    public String getPhone ()
     {
-        this.id = id;
+        return phone;
+    }
+
+    public String getSex ()
+    {
+        return sex;
+    }
+
+    public String getStreet ()
+    {
+        return street;
+    }
+
+    public User (String city, String email, String name, String surname, String password, String phone, String sex, String street)
+    {
+        this.city = city;
         this.email = email;
-        this.jmeno = jmeno;
-        this.prijmeni = prijmeni;
-        this.telefon = telefon;
+        this.name = name;
+        this.surname = surname;
+        this.password = password;
+        this.phone = phone;
+        this.sex = sex;
+        this.street = street;
     }
-
-    private final String email;
-    private final String jmeno;
-    private final String prijmeni;
-    private final String telefon;
-
 }
