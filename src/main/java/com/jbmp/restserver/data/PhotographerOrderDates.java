@@ -2,14 +2,14 @@ package com.jbmp.restserver.data;
 
 import java.util.List;
 
-public class PhotographerDates {
+public class PhotographerOrderDates {
 
     private List<String> dates;
 
-    public PhotographerDates() {
+    public PhotographerOrderDates() {
     }
 
-    public PhotographerDates(List<String> dates) {
+    public PhotographerOrderDates(List<String> dates) {
         this.dates = dates;
     }
 

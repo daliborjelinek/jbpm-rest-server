@@ -1,20 +1,24 @@
 package com.jbmp.restserver.data;
 
-public class PhotographerData {
+public class PhotographerOrderData {
 
     private String day;
     private Integer price;
     private String photographer;
     private Integer rating;
+    private String phone;
+    private String email;
 
-    public PhotographerData() {
+    public PhotographerOrderData() {
     }
 
-    public PhotographerData(String day, Integer price, String photographer, Integer rating) {
+    public PhotographerOrderData(String day, Integer price, String photographer, Integer rating, String phone, String email) {
         this.day = day;
         this.price = price;
         this.photographer = photographer;
         this.rating = rating;
+        this.phone = phone;
+        this.email = email;
     }
 
     @Override

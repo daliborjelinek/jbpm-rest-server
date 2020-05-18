@@ -5,11 +5,11 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Scope("singleton")
-public class PhotographerSingletonBean {
+public class SelectedPhotographerSingletonBean {
 
     private String photographerName;
 
-    public PhotographerSingletonBean() {
+    public SelectedPhotographerSingletonBean() {
     }
 
     public String getPhotographerName() {

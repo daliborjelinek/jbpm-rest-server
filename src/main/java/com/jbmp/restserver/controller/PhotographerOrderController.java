@@ -1,9 +1,9 @@
 package com.jbmp.restserver.controller;
 
-import com.jbmp.restserver.data.PhotographerData;
-import com.jbmp.restserver.data.PhotographerDates;
-import com.jbmp.restserver.data.PhotographerSingletonBean;
+import com.jbmp.restserver.data.PhotographerOrderData;
+import com.jbmp.restserver.data.PhotographerOrderDates;
 import com.jbmp.restserver.data.PhotographersForCategory;
+import com.jbmp.restserver.data.SelectedPhotographerSingletonBean;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 public class PhotographerOrderController {
 
     @Autowired
-    private PhotographerSingletonBean photographerSingletonBean;
+    private SelectedPhotographerSingletonBean selectedPhotographerSingletonBean;
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
@@ -26,20 +26,22 @@ public class PhotographerOrderController {
     @PostMapping("/photographer/dates")
     public void loadPhotographerDates(@RequestBody PhotographersForCategory photographers) {
         String photographerName = photographers.getPhotographers().get(0);
-        photographerSingletonBean.setPhotographerName(photographerName);
+        selectedPhotographerSingletonBean.setPhotographerName(photographerName);
         logger.info("Nacitani dat pro fotografa " + photographerName);
     }
 
     @PostMapping("/photographer")
-    public PhotographerData loadPhotographerData(@RequestBody PhotographerDates photographerDates) {
-        String date = photographerDates.getDates().get(0);
-        String photographerName = photographerSingletonBean.getPhotographerName();
+    public PhotographerOrderData loadPhotographerData(@RequestBody PhotographerOrderDates photographerOrderDates) {
+        String date = photographerOrderDates.getDates().get(0);
+        String photographerName = selectedPhotographerSingletonBean.getPhotographerName();
 
         logger.info("Nacitani dat k fotografovi " + photographerName + " pro datum " + date);
         if (photographerName.equals("Dalibor Jelinek")) {
-            return new PhotographerData(date, 5000, "Dalibor Jelinek", 75);
+            return new PhotographerOrderData(date, 5000, "Dalibor Jelinek", 75,
+                    "+4806547895", "dalibor@photomeet.com");
         } else {
-            return new PhotographerData(date, 4000, "Verca Podobova", 90);
+            return new PhotographerOrderData(date, 4000, "Verca Podobova", 90,
+                    "+255265498", "verca@photomeet.com");
         }
     }
 
