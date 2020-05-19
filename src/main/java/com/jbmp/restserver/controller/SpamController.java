@@ -8,8 +8,9 @@ public class SpamController {
 
     @GetMapping("/spamControl")
     public boolean spamControl() {
-        double rand = Math.floor(Math.random() * 10);
-        return rand >= 2;
+        // double rand = Math.floor(Math.random() * 10);
+        // return rand >= 2;
+        return false;
     }
 
 }
